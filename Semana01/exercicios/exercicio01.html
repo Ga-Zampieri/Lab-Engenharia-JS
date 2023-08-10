@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio01</title>
+</head>
+<body>
+    <p> Implemente um script JavaScript que solicite ao usuário a entrada de um
+    dado via teclado. </p>
+    <p>Em seguida, pergunte se o usuário deseja verificar o tipo do
+    dado informado.</p>
+    <p>Caso o usuário confirme escreva no corpo da página o tipo
+    do dado (Number, String, etc.) caso contrário escreva a mensagem: "Obrigado
+    por visitar esta página".</p>
+    <button onclick="Start()">Call Exercício 01</button>
+    <h4><a href="../semana01.html">Voltar</a></h4>
+    <script>
+        function Start() {
+            let x = prompt("Informe qualquer dado:", "");
+            if(parseFloat(x))
+            {
+                let y = parseFloat(x);
+                document.write("<h1>"+typeof(y)+"</h1>");
+            }else{
+                document.write("<h1>"+typeof(x)+"</h1>");
+            }    
+            document.write('<h4><a href="../semana01.html">Voltar</a></h4>');
+        }
+        
+    </script>
+</body>
+</html>

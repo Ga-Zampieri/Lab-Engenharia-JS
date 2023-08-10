@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    <p>Implemente um script JavaScript que solicite ao usuário um número inteiro
+    positivo. </p>
+    <p>Assim que o usuário digitar um valor válido calcule o fatorial do
+    mesmo e exiba o resultado em uma janela de alerta.</p>
+    <button onclick="Start()">Call Exercício 04</button>
+    <h4><a href="../semana01.html">Voltar</a></h4>
+    <script>
+        function Start() {
+            let x;
+            let r;
+            x = prompt("Informe um número inteiro positivo: ", "");
+            while (!parseInt(x) || !(parseInt(x) > 0))
+            {
+                alert("O conteúdo informado não é um número positivo.");
+                x = prompt("Informe um número inteiro positivo: ", "");
+            }
+
+            r = Fatorial(x);
+            alert("O fatorial de "+x+" é "+r+".");        
+            document.write('<h4><a href="../semana01.html">Voltar</a></h4>');
+        }
+        
+        function Fatorial(z) {
+            for (i = z-1; i > 0; i--) {
+                z*=i;
+            }
+            return z;
+        }
+    </script>
+</body>
+</html>

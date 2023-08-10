@@ -8,7 +8,7 @@ body {
     width: 100%;
 }
 
-ul {
+nav {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }

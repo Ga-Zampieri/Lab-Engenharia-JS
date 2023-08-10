@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    <p>Implemente um script JavaScript que solicite ao usuário um número inteiro
+    positivo. </p>
+    <p>Assim que o usuário digitar um valor válido informe em uma janela
+    de alerta se o número é ou não primo.</p>
+    <button onclick="Start()">Call Exercício 02</button>
+    <h4><a href="../semana01.html">Voltar</a></h4>
+    <script>
+        function Start() {
+            let x;
+            let r;
+            x = prompt("Informe um número inteiro positivo: ", "");
+            while (!parseInt(x) || !(parseInt(x) > 0))
+            {
+                alert("O conteúdo informado não é um número positivo.");
+                x = prompt("Informe um número inteiro positivo: ", "");
+            }
+
+            r = EhPrimo(x);
+            if (r)
+            {
+                alert("O número é primo.");
+            } else {
+                alert("O número não é primo.");
+            }    
+            document.write('<h4><a href="../semana01.html">Voltar</a></h4>');
+        }
+        
+        function EhPrimo(z) {
+            let q = 0;
+            for (i = z; i > 0; i--) {
+                if (z%i == 0)
+                {
+                    q ++;
+                }
+                console.log(z+"%"+i+"="+z%i);
+                console.log(q);
+            }
+            if (q == 2)
+            {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
