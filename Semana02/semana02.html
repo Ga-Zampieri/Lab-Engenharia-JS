@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Semana 02</title>
+</head>
+<body>
+    <h1 class="A1">Atividade 02</h1>
+
+    <nav>
+        <ul>
+            <li><a href="./exercicios/exercicio01.html">Exercício 01</a></li>
+            <li><a href="./exercicios/exercicio02.html">Exercício 02</a></li>
+            <li><a href="./exercicios/exercicio03.html">Exercício 03</a></li>
+            <li><a href="./exercicios/exercicio04.html">Exercício 04</a></li>
+            <li><a href="../index.html">Voltar</a></li>
+        </ul>
+    </nav>    
+
+    <script>
+        function Pessoa() {
+            let Nome;
+            let Idade;
+            let Sexo;
+
+            this.setNome = function setNome(nome) {
+                this.Nome = nome;
+            }
+
+            this.getNome = function getNome() {
+                return this.Nome;
+            }
+
+            this.setIdade = function setIdade(idade) {
+                this.Idade = idade;
+            }
+
+            this.getIdade = function getIdade() {
+                return this.Idade;
+            }
+
+            this.getSexo = function setSexo(sexo) {
+                this.Sexo = sexo;
+            }
+
+            this.getSexo = function getSexo() {
+                return this.Sexo;
+            }
+        }
+
+        let p1 = new Pessoa();
+        p1.Nome = "Jorge";
+        p1.Idade = 17;
+        p1.Sexo = "M";
+        document.write(p1.Nome, p1.setIdade, p1.Sexo + "\n"); //+ p1.getNome(), p1.getIdade(), p1.getSexo());
+        p1.setNome("Jorge Bagre");
+        p1.setIdade(28);
+        p1.setSexo("I");
+        document.write(p1.Nome, p1.setIdade, p1.Sexo + "\n"); //+ p1.getNome(), p1.getIdade(), p1.getSexo());
+    </script>
+</body>
+</html>

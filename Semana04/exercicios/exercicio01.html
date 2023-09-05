@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style01.css">
+    <title>Exercício 01</title>
+</head>
+<body>
+    <h1>Atividade 01</h1>
+    <form action="" id="form-professor" style="display: block;" class="form-01">
+        <label for="Nome">Nome:</label>
+        <input type="text" placeholder="Digite seu nome completo" id="Nome"><br>
+        
+        <label for="Email">Email:</label>
+        <input type="text" placeholder="fulano@taltal.com" id="Email"><br>
+        
+        <label for="DataNasc">Data Nascimento:</label>
+        <input type="date" id="DataNasc"><br>
+        
+        <label for="TelFixo">Telefone Fixo:</label>
+        <input type="tel" id="TelFixo" placeholder="(99)99999-9999"><br>
+        
+        <label for="TelCel">Telefone Celular:</label>
+        <input type="tel" id="TelCel" placeholder="(99)99999-9999"><br>
+        
+        <input type="radio" id="tipoUsuario" name="tipoUsuario" value="Professor" checked>
+        <label for="tipoUsuario">Professor</label><br>
+        
+        <input type="radio" id="tipoUsuario" name="tipoUsuario" value="Aluno">
+        <label for="tipoUsuario">Aluno</label><br>
+        
+        <label for="areaAtuacao">Área:</label>
+        <input type="text" id="areaAtuacao" placeholder="Digite aqui a sua área de atuação"><br>
+        
+        <label for="Matricula">Matrícula:</label>
+        <input type="text" id="Matricula" placeholder="Digite sua matrícula"><br>
+        
+        <label for="Lattes">Lattes:</label>
+        <input type="text" id="Lattes" placeholder="Digite aqui o endereço para seu Lattes"><br>
+        
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Redefinir">
+        <button><a href="../semana04.html">Voltar</a></button>
+    </form>
+
+    <form action="" id="form-aluno" style="display: none;" class="form-01">
+        <label for="Nome">Nome:</label>
+        <input type="text" placeholder="Digite seu nome completo" id="Nome"><br>
+        
+        <label for="Email">Email:</label>
+        <input type="text" placeholder="fulano@taltal.com" id="Email"><br>
+        
+        <label for="DataNasc">Data Nascimento:</label>
+        <input type="date" id="DataNasc"><br>
+        
+        <label for="TelFixo">Telefone Fixo:</label>
+        <input type="tel" id="TelFixo" placeholder="(99)99999-9999"><br>
+        
+        <label for="TelCel">Telefone Celular:</label>
+        <input type="tel" id="TelCel" placeholder="(99)99999-9999"><br>
+        
+        <input type="radio" id="tipoUsuario" name="tipoUsuario" value="Professor">
+        <label for="tipoUsuario">Professor</label><br>
+        
+        <input type="radio" id="tipoUsuario" name="tipoUsuario" value="Aluno" checked>
+        <label for="tipoUsuario">Aluno</label><br>
+        
+        <label for="Curso">Curso:</label>
+        <input type="text" id="Curso" placeholder="Digite seu curso"><br>
+        
+        <label for="Matricula">Matrícula:</label>
+        <input type="text" id="Matricula" placeholder="Digite sua matrícula"><br>
+        
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Redefinir">
+        <button><a href="../semana04.html">Voltar</a></button>
+    </form>
+
+    <script>
+        function verificaTipoUsuario(tipoUser) {
+            if (tipoUser == "Professor" ) {
+                loadPageProfessor();
+            } else {
+                loadPageAluno();
+            }
+        }
+
+
+        let radioButtonTipoUser = document.querySelectorAll('input[name="tipoUsuario"]');
+        
+        for (let i = 0; i < radioButtonTipoUser.length; i++) {
+            radioButtonTipoUser[i].addEventListener("change", function() {
+            let val = this.value; // this == the clicked radio,
+            verificaTipoUsuario(val);
+        });
+        }
+
+
+        function loadPageAluno() {
+            document.getElementById("form-professor").style.display = "none";
+            document.getElementById("form-aluno").style.display = "block"
+        }
+        
+        function loadPageProfessor() {
+            document.getElementById("form-professor").style.display = "block";
+            document.getElementById("form-aluno").style.display = "none";
+        }
+    </script>
+    
+</body>
+</html>
