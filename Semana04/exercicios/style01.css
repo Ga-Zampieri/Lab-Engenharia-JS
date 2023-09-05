@@ -1,0 +1,41 @@
+* {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form {
+    margin-top: 60px;
+    border: 1px solid black;
+    border-radius: 6px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form>label {
+    padding: 10px;
+    margin: 6px;
+}
+
+form>input {
+    padding: 10px;
+    margin-top: 6px;
+    margin-left: 30px;
+    margin-bottom: 6px;
+}
+
+form>button {
+    padding: 10px;
+    margin-top: 6px;
+    margin-left: 30px;
+    margin-bottom: 6px;
+}

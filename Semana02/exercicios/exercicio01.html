@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 1. Implemente um script com um array cujos valores
+sejam adicionados dinamicamente pelo usuário
+utilizando-se formulário. A cada nova inserção exiba
+todos os dados cadastrados em ordem alfabética em
+uma lista ordenada do html. -->
+
+<body onload="startList()">
+        <input type="text" id="input-user" placeholder="Insira qualquer texto"><br>
+        <button type="submit" onclick="inserirDados()">Inserir Dados</button>    
+    <script>
+        var y = new Array();
+        function inserirDados() {
+            let x = document.getElementById('input-user').value;
+            if (y.length >= 1)
+            {
+                y.push(x);
+                y.sort();   
+            } else {
+                y.push(x);
+            }            
+            exibirLista(y);
+        }
+
+        function exibirLista(listaOrdenada) {
+            document.getElementById('ordened-list').innerHTML = null;
+            listaOrdenada.forEach(element => {
+                let listItem = document.createElement("li");
+                let textoItem = document.createTextNode(element)
+                listItem.append(textoItem);
+                document.getElementById('ordened-list').appendChild(listItem);
+            });
+        }
+
+        function startList() {
+            let list = document.createElement("ol");
+            list.setAttribute("id","ordened-list");
+            document.body.appendChild(list);
+        }
+    </script>
+</body>
+</html>
