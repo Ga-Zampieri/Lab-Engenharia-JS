@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style02.css">
+    <title>Exercício 02</title>
+</head>
+<body>
+    <h1>Atividade 02</h1>
+    <!-- <form id="form-carro" style="display: block;" class="form-01"> -->
+    <div>
+        <label for="Marca">Marca:</label>
+        <input type="text" name="Marca" placeholder="Digite a marca do carro" id="Marca" required><br>
+        
+        <label for="Modelo">Modelo:</label>
+        <input type="text" name="Modelo" placeholder="Digite o modelo do carro" id="Modelo" required><br>
+        
+        <label for="Ano">Ano:</label>
+        <input type="number" name ="Ano" id="Ano" required><br>
+        
+        <label for="Cor">Cor:</label>
+        <input type="text" name="Cor" id="Cor" placeholder="Informe a cor do carro" required><br>
+        
+        <label for="Kilometragem">Kilometragem:</label>
+        <input type="number" step="0.01" name="Kilometragem" id="Kilometragem" required><br>
+        
+        <label for="ValorFipe">Valor Fipe</label>
+        <input type="number" step="0.01" name="ValorFipe" id="ValorFipe" required><br>
+        
+        <button type="submit" id="enviar">Enviar</button>
+        <!--<input type="submit" value="Enviar">--->
+        <button type="button" id="exibirCarros">Exibir Carros</button>
+        <button><a href="../semana04.html">Voltar</a></button>
+    </div>
+        <!-- </form> -->
+
+        <br>
+        <ul id="infos-carros">
+
+        </ul>
+    <script>
+        var Carros = [];
+        
+        function Carro() {
+            let Marca;
+            let Modelo;
+            let Ano;
+            let Cor;
+            let Kilometragem;
+            let ValorFipe;
+
+            this.setMarca = function(marca) { this.Marca = marca; }
+            this.getMarca = function() { return this.Marca; }
+            this.setModelo = function(modelo) { this.Modelo = modelo; }
+            this.getModelo = function() { return this.Modelo; }
+            this.setAno = function(ano) { this.Ano = ano; }
+            this.getAno = function() { return this.Ano; }
+            this.setCor = function(cor) { this.Cor = cor; }
+            this.getCor = function() { return this.Cor; }
+            this.setKilometragem = function(kilometragem) { this.Kilometragem = kilometragem; }
+            this.getKilometragem = function() { return this.Kilometragem; }
+            this.setValorFipe = function(valorFipe) { this.ValorFipe = valorFipe; }
+            this.getValorFipe = function() { return this.ValorFipe; }
+            
+            this.anosUtilizacao = function() {
+                return (Date.now() - this.Ano);
+            }
+
+            this.valorMercado = function() {
+                if (this.Kilometragem <= 30000) {
+                    return this.ValorFipe * 1.10;
+                } else if (this.Kilometragem > 30000 && this.Kilometragem <= 50000){
+                    return this.ValorFipe;
+                } else {
+                    return this.ValorFipe * 0.9;
+                }
+            }
+        }
+
+        let unorList = document.getElementById("infos-carros");
+        let exibirCarros = document.getElementById("exibirCarros");
+        exibirCarros.addEventListener("click", () => {
+            unorList.innerHTML = null;
+            Carros.forEach(carro => {
+                let listItem = document.createElement("li");
+                listItem.innerHTML = "O carro " + carro.Modelo + " possui " + carro.anosUtilizacao() + " anos.";
+                let listItem2 = document.createElement("li");
+                listItem2.innerHTML = "O carro " + carro.Modelo + " vale R$ " + carro.valorMercado() + ".";
+                unorList.appendChild(listItem);
+                unorList.appendChild(listItem2);
+            });
+        });
+
+        let enviar = document.getElementById("enviar");
+        enviar.addEventListener("click", () => {
+            let c = new Carro();
+            console.log(document.getElementById("Marca").value);
+            console.log(document.getElementById("Modelo").value);
+            console.log(document.getElementById("Ano").value);
+            console.log(document.getElementById("Cor").value);
+            console.log(document.getElementById("Kilometragem").value);
+            console.log(document.getElementById("ValorFipe").value);
+            c.Marca = document.getElementById("Marca").value;
+            c.Modelo = document.getElementById("Modelo").value;
+            c.Ano = document.getElementById("Ano").value;
+            c.Cor = document.getElementById("Cor").value;
+            c.Kilometragem = document.getElementById("Kilometragem").value;
+            c.ValorFipe = document.getElementById("ValorFipe").value;
+            
+            Carros.push(c);
+            c = null;
+        })
+
+    </script>
+<!---2. Implemente um formulario HTML para input das características de um 
+carro:
+marca, modelo, ano, cor, kilometragem, valor_fipe
+Implemente um script que armazene as características preenchidas no 
+formulário em um objeto e que contenha, além das propriedades acima, dois 
+métodos:
+anosUtilizacao() – deve retornar quantos anos de utilização o veículo 
+possui;
+valorMercado() – deve retornar o valor de mercado considerando a 
+seguinte regra:
+carros que rodam até 30.000 km/ano – 110% do valor_fipe
+carros que rodam entre 30.000 e 50.000 km/ano – 100% do valor_fipe
+carros que rodam mais que 50.000 km/ano – 90% do valor_fipe
+Preenchidos os campos os métodos criados devem ser utilizados para exibir 
+quantos anos o veículo tem de utilização juntamente com seu valor de 
+mercado.
+-->
+</body>
+</html>
