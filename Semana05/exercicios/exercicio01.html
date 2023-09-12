@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+<div id="div01">
+
+</div>
+
+<script>
+
+    document.body.style.display = "flex";
+    document.body.style.justifyContent = "center";
+    let div = document.getElementById("div01");
+    div.style.width = "400px";
+    div.style.display = "flex";
+    div.style.flexDirection = "column";
+    div.style.justifyContent = "center";
+    div.style.alignItems = "center";
+    // div.style.borderRight = "2px solid black"
+    // div.style.borderBottom = "2px solid black"
+
+    //header
+    let header = document.createElement("div");
+    header.style.width = "400px";
+    header.style.display = "flex";
+    header.style.justifyContent = "space-evenly";
+    header.style.alignItems = "center";
+    div.appendChild(header);
+    
+    let titulo = document.createElement("h1");
+    titulo.style.display = "flex";
+    titulo.style.marginLeft = "100px";
+    titulo.innerHTML = "Total"; 
+    header.appendChild(titulo);    
+    
+    let imgRefresh = document.createElement("img");
+    imgRefresh.src = "./src/refresh.png";
+    imgRefresh.style.display = "flex";
+    imgRefresh.style.height = "50px";
+    let btnRefresh = document.createElement("button");
+    btnRefresh.type = "button";
+    btnRefresh.setAttribute("id", "refreshAllBtn");
+    btnRefresh.appendChild(imgRefresh);
+    header.appendChild(btnRefresh);
+    //fim header
+    
+    //contadorTotal
+    let contadorTotal = document.createElement("p");
+    contadorTotal.innerHTML = "0";
+    contadorTotal.style.fontSize = "22px";
+    contadorTotal.style.color = "grey";
+    contadorTotal.style.border = "1px solid black";
+    contadorTotal.style.borderRadius = "8px";
+    contadorTotal.style.padding = "8px 50px";
+    contadorTotal.style.marginTop = "-10px";
+    div.appendChild(contadorTotal);
+    //contador
+    
+    
+    //body
+    let bodyDiv = document.createElement("div");
+    bodyDiv.style.width = "400px";
+    bodyDiv.style.height = "350px";
+    bodyDiv.style.display = "flex";
+    bodyDiv.style.justifyContent = "space-evenly";
+    bodyDiv.style.alignItems = "center";
+    
+    div.appendChild(bodyDiv);
+    
+    //lado man 
+    
+    //img man
+    let imgMan = document.createElement("img");
+    imgMan.src = "./src/man.png";
+    //fim img man
+    
+    //increase decrease area
+    
+    let plusMan = document.createElement("img");
+    plusMan.src = "./src/plus.png";
+    let plusButtonMan = document.createElement("button");
+    plusButtonMan.appendChild(plusMan);
+    plusButtonMan.setAttribute("id", "addBtnMan");
+    
+    let minusMan = document.createElement("img");
+    minusMan.src = "./src/minus.png";
+    let minusButtonMan = document.createElement("button");
+    minusButtonMan.setAttribute("id", "minusBtnMan")
+    minusButtonMan.appendChild(minusMan);
+    
+    let divIncDecMan = document.createElement("div");
+    divIncDecMan.style.width = "150px";
+    divIncDecMan.style.display = "flex";
+    divIncDecMan.style.justifyContent = "space-evenly";
+    divIncDecMan.style.alignItems = "center";
+    
+    divIncDecMan.appendChild(plusButtonMan);
+    divIncDecMan.appendChild(minusButtonMan);
+    //fim increase decrease area
+
+    //total man
+    let totalMan = document.createElement("h1");
+    totalMan.style.display = "flex";
+    totalMan.innerHTML = "Total"; 
+    //fim total man
+    
+    //contador man
+    let contadorMan = document.createElement("p");
+    contadorMan.innerHTML = "0";
+    contadorMan.style.fontSize = "20px";
+    contadorMan.style.color = "grey";
+    contadorMan.style.border = "1px solid black";
+    contadorMan.style.borderRadius = "8px";
+    contadorMan.style.padding = "8px 50px";
+    contadorMan.style.marginTop = "-15px";
+    //fim contador man
+    
+    let divMan = document.createElement("div");
+    divMan.style.width = "150px";
+    divMan.style.display = "flex";
+    divMan.style.flexDirection = "column";
+    divMan.style.justifyContent = "center";
+    divMan.style.alignItems = "center";
+    divMan.appendChild(imgMan);
+    divMan.appendChild(divIncDecMan);
+    divMan.appendChild(totalMan);
+    divMan.appendChild(contadorMan);
+    //fim lado man
+    
+    
+    //lado woman 
+    //woman
+    let imgWoman = document.createElement("img");
+    imgWoman.src = "./src/woman.png";
+    
+    //increase decrease area
+    let plusWoman = document.createElement("img");
+    plusWoman.src = "./src/plus.png";
+    let plusButtonWoman = document.createElement("button");
+    plusButtonWoman.appendChild(plusWoman);
+    plusButtonWoman.setAttribute("id", "addBtnWoman")
+    
+    let minusWoman = document.createElement("img");
+    minusWoman.src = "./src/minus.png";
+    let minusButtonWoman = document.createElement("button");
+    minusButtonWoman.appendChild(minusWoman);
+    minusButtonWoman.setAttribute("id", "minusBtnWoman")
+    
+    let divIncDecWoman = document.createElement("div");
+    divIncDecWoman.style.width = "150px";
+    divIncDecWoman.style.display = "flex";
+    divIncDecWoman.style.justifyContent = "space-evenly";
+    divIncDecWoman.style.alignItems = "center";
+    
+    divIncDecWoman.appendChild(plusButtonWoman);
+    divIncDecWoman.appendChild(minusButtonWoman);
+    //fim increase decrease area
+
+    //total woman
+    let totalWoman = document.createElement("h1");
+    totalWoman.style.display = "flex";
+    totalWoman.innerHTML = "Total"; 
+    //fim total woman
+
+    //contador woman
+    let contadorWoman = document.createElement("p");
+    contadorWoman.innerHTML = "0";
+    contadorWoman.style.fontSize = "20px";
+    contadorWoman.style.color = "grey";
+    contadorWoman.style.border = "1px solid black";
+    contadorWoman.style.borderRadius = "8px";
+    contadorWoman.style.padding = "8px 50px";
+    contadorWoman.style.marginTop = "-15px";
+    //fim contador woman
+
+    let divWoman = document.createElement("div");
+    divWoman.style.width = "150px";
+    divWoman.style.display = "flex";
+    divWoman.style.flexDirection = "column";
+    divWoman.style.justifyContent = "center";
+    divWoman.style.alignItems = "center";
+    divWoman.appendChild(imgWoman);
+    divWoman.appendChild(divIncDecWoman);
+    divWoman.appendChild(totalWoman);
+    divWoman.appendChild(contadorWoman);
+    //fim woman
+    
+    bodyDiv.appendChild(divMan);
+
+    bodyDiv.appendChild(divWoman);
+
+    //fim body
+
+    let minBtnWoman = document.getElementById("minusBtnWoman");
+    let addBtnWoman = document.getElementById("addBtnWoman");
+    let minBtnMan = document.getElementById("minusBtnMan");
+    let addBtnMan = document.getElementById("addBtnMan");
+    let refreshAllBtn = document.getElementById("refreshAllBtn");
+
+    addBtnMan.addEventListener("click", addOneMan);
+    minusBtnMan.addEventListener("click", minusOneMan);
+    
+    addBtnWoman.addEventListener("click", addOneWoman);
+    minusBtnWoman.addEventListener("click", minusOneWoman);
+    refreshAllBtn.addEventListener("click", refreshAll);
+
+    function addOneMan() {
+        let valorAtual = contadorMan.innerHTML;
+        valorAtual++;
+        contadorMan.innerHTML = valorAtual;
+        
+        let valorAtualTotal = contadorTotal.innerHTML;
+        valorAtualTotal++;
+        contadorTotal.innerHTML = valorAtualTotal;
+    }
+
+    function addOneWoman() {
+        let valorAtual = contadorWoman.innerHTML;
+        valorAtual++;
+        contadorWoman.innerHTML = valorAtual;
+        
+        let valorAtualTotal = contadorTotal.innerHTML;
+        valorAtualTotal++;
+        contadorTotal.innerHTML = valorAtualTotal;
+    }
+    
+    function minusOneWoman() {
+        let valorAtual = contadorWoman.innerHTML;
+        valorAtual--;
+        contadorWoman.innerHTML = valorAtual;
+        
+        let valorAtualTotal = contadorTotal.innerHTML;
+        valorAtualTotal--;
+        contadorTotal.innerHTML = valorAtualTotal;
+    }
+    
+    function minusOneMan() {
+        let valorAtual = contadorMan.innerHTML;
+        valorAtual--;
+        contadorMan.innerHTML = valorAtual;
+        
+        let valorAtualTotal = contadorTotal.innerHTML;
+        valorAtualTotal--;
+        contadorTotal.innerHTML = valorAtualTotal;
+    }
+
+    function refreshAll() {
+        let valorRefresh = 0;
+        contadorMan.innerHTML = valorRefresh;   
+        contadorWoman.innerHTML = valorRefresh;   
+        contadorTotal.innerHTML = valorRefresh;   
+    }
+
+</script>
+<!-- Implemente uma página HTML contendo APENAS uma div na qual um contador de 
+pessoas similar ao da figura abaixo deve ser gerado por meio de JavaScript, ou seja, 
+todos os elementos do contador devem ser criados e formatados com JavaScript -->
+</body>
+</html>
