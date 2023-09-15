@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body style="display: flex; justify-content: space-between; flex-direction: column; align-items: center;">
+<div id="div01" style="display: flex; width: 300px; height: 400px; color: black; border-radius: 6px; flex-direction: column; align-items: center;">
+
+</div>
+
+<script>
+    //bloco digitado
+    let pBlocoTexto = document.createElement("p");
+    pBlocoTexto.style.margin = "5px 0px";
+    pBlocoTexto.style.padding = "0px 5px";
+    pBlocoTexto.style.width = "280px";
+    pBlocoTexto.style.height = "100px";
+    pBlocoTexto.style.lineHeight = "100px";
+    pBlocoTexto.style.fontSize = "50px";
+    pBlocoTexto.style.border = "1px solid black";
+    pBlocoTexto.style.textAlign = "right";
+    pBlocoTexto.innerHTML = "0";        
+    //fim bloco digitado
+
+    let pBlocoDigitos = document.createElement("div");
+    pBlocoDigitos.style.width = "280px";
+    pBlocoDigitos.style.height = "250px";
+    
+    //primeira linha
+    let primeiraLinha = document.createElement("div");
+    primeiraLinha.style.width = "280px";
+    primeiraLinha.style.height = "50px";
+    primeiraLinha.style.display = "flex";
+    primeiraLinha.style.justifyContent = "space-around";
+    
+    let digitAC = document.createElement("button");
+    digitAC.innerHTML = "AC";
+    digitAC.value = "AC";
+    digitAC.style.borderRadius = "100%";
+    digitAC.style.border = "1px solid black";
+    digitAC.style.textAlign = "center";
+    digitAC.style.lineHeight = "30px";
+    digitAC.style.height = "47.6px";
+    digitAC.style.width = "47.6px";
+    digitAC.style.fontSize = "20px";
+    digitAC.style.padding = "8px";
+    digitAC.style.backgroundColor = "grey";
+    
+    let digitPosNeg = document.createElement("button");
+    digitPosNeg.style.borderRadius = "100%";
+    digitPosNeg.style.border = "1px solid black";
+    digitPosNeg.style.textAlign = "center";
+    digitPosNeg.style.lineHeight = "30px";
+    digitPosNeg.style.height = "47.6px";
+    digitPosNeg.style.width = "47.6px";
+    digitPosNeg.style.fontSize = "20px";
+    digitPosNeg.style.padding = "8px";
+    digitPosNeg.style.backgroundColor = "grey";
+    digitPosNeg.innerHTML = "+/-";
+    digitPosNeg.value = "+/-";
+    
+    let digitPercent = document.createElement("button");
+    digitPercent.style.borderRadius = "100%";
+    digitPercent.style.border = "1px solid black";
+    digitPercent.style.textAlign = "center";
+    digitPercent.style.lineHeight = "30px";
+    digitPercent.style.height = "47.6px";
+    digitPercent.style.width = "47.6px";
+    digitPercent.style.fontSize = "20px";
+    digitPercent.style.padding = "8px";
+    digitPercent.style.backgroundColor = "grey";
+    digitPercent.innerHTML = "%";
+    digitPercent.value = "%";
+    
+    let digitDivid = document.createElement("button");
+    digitDivid.style.borderRadius = "100%";
+    digitDivid.style.border = "1px solid black";
+    digitDivid.style.textAlign = "center";
+    digitDivid.style.lineHeight = "30px";
+    digitDivid.style.height = "47.6px";
+    digitDivid.style.width = "47.6px";
+    digitDivid.style.fontSize = "20px";
+    digitDivid.style.padding = "8px";
+    digitDivid.style.backgroundColor = "orange";
+    digitDivid.style.color = "white";
+    digitDivid.innerHTML = "/";
+    digitDivid.value = "/";
+    
+    primeiraLinha.appendChild(digitAC);
+    primeiraLinha.appendChild(digitPosNeg);
+    primeiraLinha.appendChild(digitPercent);
+    primeiraLinha.appendChild(digitDivid);
+    //fim primeira linha
+    
+    //segunda linha
+    let segundaLinha = document.createElement("div");
+    segundaLinha.style.width = "280px";
+    segundaLinha.style.height = "50px";
+    segundaLinha.style.display = "flex";
+    segundaLinha.style.justifyContent = "space-around";
+    
+    let digit7 = document.createElement("button");
+    digit7.style.borderRadius = "100%";
+    digit7.style.border = "1px solid black";
+    digit7.style.textAlign = "center";
+    digit7.style.lineHeight = "30px";
+    digit7.style.height = "47.6px";
+    digit7.style.width = "47.6px";
+    digit7.style.fontSize = "20px";
+    digit7.style.padding = "8px";
+    digit7.style.backgroundColor = "black";
+    digit7.style.color = "white";
+    digit7.innerHTML = "7";
+    digit7.value = "7";
+    
+    let digit8 = document.createElement("button");
+    digit8.style.borderRadius = "100%";
+    digit8.style.border = "1px solid black";
+    digit8.style.textAlign = "center";
+    digit8.style.lineHeight = "30px";
+    digit8.style.height = "47.6px";
+    digit8.style.width = "47.6px";
+    digit8.style.fontSize = "20px";
+    digit8.style.padding = "8px";
+    digit8.style.backgroundColor = "black";
+    digit8.style.color = "white";
+    digit8.innerHTML = "8";
+    digit8.value = "8";
+    
+    let digit9 = document.createElement("button");
+    digit9.style.borderRadius = "100%";
+    digit9.style.border = "1px solid black";
+    digit9.style.textAlign = "center";
+    digit9.style.lineHeight = "30px";
+    digit9.style.height = "47.6px";
+    digit9.style.width = "47.6px";
+    digit9.style.fontSize = "20px";
+    digit9.style.padding = "8px";
+    digit9.style.backgroundColor = "black";
+    digit9.style.color = "white";
+    digit9.innerHTML = "9";
+    digit9.value = "9";
+    
+    let digitTimes = document.createElement("button");
+    digitTimes.style.borderRadius = "100%";
+    digitTimes.style.border = "1px solid black";
+    digitTimes.style.textAlign = "center";
+    digitTimes.style.lineHeight = "30px";
+    digitTimes.style.height = "47.6px";
+    digitTimes.style.width = "47.6px";
+    digitTimes.style.fontSize = "20px";
+    digitTimes.style.padding = "8px";
+    digitTimes.style.backgroundColor = "orange";
+    digitTimes.style.color = "white";
+    digitTimes.innerHTML = "*";
+    digitTimes.value = "*";
+    
+    segundaLinha.appendChild(digit7);
+    segundaLinha.appendChild(digit8);
+    segundaLinha.appendChild(digit9);
+    segundaLinha.appendChild(digitTimes);
+    //fim segunda linha
+    
+    //terceira linha
+    let terceiraLinha = document.createElement("div");
+    terceiraLinha.style.width = "280px";
+    terceiraLinha.style.height = "50px";
+    terceiraLinha.style.display = "flex";
+    terceiraLinha.style.justifyContent = "space-around";
+    
+    let digit4 = document.createElement("button");
+    digit4.style.borderRadius = "100%";
+    digit4.style.border = "1px solid black";
+    digit4.style.textAlign = "center";
+    digit4.style.lineHeight = "30px";
+    digit4.style.height = "47.6px";
+    digit4.style.width = "47.6px";
+    digit4.style.fontSize = "20px";
+    digit4.style.padding = "8px";
+    digit4.style.backgroundColor = "black";
+    digit4.style.color = "white";
+    digit4.innerHTML = "4";
+    digit4.value = "4";
+    
+    let digit5 = document.createElement("button");
+    digit5.style.borderRadius = "100%";
+    digit5.style.border = "1px solid black";
+    digit5.style.textAlign = "center";
+    digit5.style.lineHeight = "30px";
+    digit5.style.height = "47.6px";
+    digit5.style.width = "47.6px";
+    digit5.style.fontSize = "20px";
+    digit5.style.padding = "8px";
+    digit5.style.backgroundColor = "black";
+    digit5.style.color = "white";
+    digit5.innerHTML = "5";
+    digit5.value = "5";
+    
+    let digit6 = document.createElement("button");
+    digit6.style.borderRadius = "100%";
+    digit6.style.border = "1px solid black";
+    digit6.style.textAlign = "center";
+    digit6.style.lineHeight = "30px";
+    digit6.style.height = "47.6px";
+    digit6.style.width = "47.6px";
+    digit6.style.fontSize = "20px";
+    digit6.style.padding = "8px";
+    digit6.style.backgroundColor = "black";
+    digit6.style.color = "white";
+    digit6.innerHTML = "6";
+    digit6.value = "6";
+    
+    let digitMinus = document.createElement("button");
+    digitMinus.style.borderRadius = "100%";
+    digitMinus.style.border = "1px solid black";
+    digitMinus.style.textAlign = "center";
+    digitMinus.style.lineHeight = "30px";
+    digitMinus.style.height = "47.6px";
+    digitMinus.style.width = "47.6px";
+    digitMinus.style.fontSize = "20px";
+    digitMinus.style.padding = "8px";
+    digitMinus.style.backgroundColor = "orange";
+    digitMinus.style.color = "white";
+    digitMinus.innerHTML = "-";
+    digitMinus.value = "-";
+    
+    terceiraLinha.appendChild(digit4);
+    terceiraLinha.appendChild(digit5);
+    terceiraLinha.appendChild(digit6);
+    terceiraLinha.appendChild(digitMinus);
+    //fim terceira linha
+    
+    //quarta linha
+    let quartaLinha = document.createElement("div");
+    quartaLinha.style.width = "280px";
+    quartaLinha.style.height = "50px";
+    quartaLinha.style.display = "flex";
+    quartaLinha.style.justifyContent = "space-around";
+    
+    let digit1 = document.createElement("button");
+    digit1.style.borderRadius = "100%";
+    digit1.style.border = "1px solid black";
+    digit1.style.textAlign = "center";
+    digit1.style.lineHeight = "30px";
+    digit1.style.height = "47.6px";
+    digit1.style.width = "47.6px";
+    digit1.style.fontSize = "20px";
+    digit1.style.padding = "8px";
+    digit1.style.backgroundColor = "black";
+    digit1.style.color = "white";
+    digit1.innerHTML = "1";
+    digit1.value = "1";
+    
+    let digit2 = document.createElement("button");
+    digit2.style.borderRadius = "100%";
+    digit2.style.border = "1px solid black";
+    digit2.style.textAlign = "center";
+    digit2.style.lineHeight = "30px";
+    digit2.style.height = "47.6px";
+    digit2.style.width = "47.6px";
+    digit2.style.fontSize = "20px";
+    digit2.style.padding = "8px";
+    digit2.style.backgroundColor = "black";
+    digit2.style.color = "white";
+    digit2.innerHTML = "2";
+    digit2.value = "2";
+    
+    let digit3 = document.createElement("button");
+    digit3.style.borderRadius = "100%";
+    digit3.style.border = "1px solid black";
+    digit3.style.textAlign = "center";
+    digit3.style.lineHeight = "30px";
+    digit3.style.height = "47.6px";
+    digit3.style.width = "47.6px";
+    digit3.style.fontSize = "20px";
+    digit3.style.padding = "8px";
+    digit3.style.backgroundColor = "black";
+    digit3.style.color = "white";
+    digit3.innerHTML = "3";
+    digit3.value = "3";
+    
+    let digitPlus = document.createElement("button");
+    digitPlus.style.borderRadius = "100%";
+    digitPlus.style.border = "1px solid black";
+    digitPlus.style.textAlign = "center";
+    digitPlus.style.lineHeight = "30px";
+    digitPlus.style.height = "47.6px";
+    digitPlus.style.width = "47.6px";
+    digitPlus.style.fontSize = "20px";
+    digitPlus.style.padding = "8px";
+    digitPlus.style.backgroundColor = "orange";
+    digitPlus.style.color = "white";
+    digitPlus.innerHTML = "+";
+    digitPlus.value = "+";
+    
+    quartaLinha.appendChild(digit1);
+    quartaLinha.appendChild(digit2);
+    quartaLinha.appendChild(digit3);
+    quartaLinha.appendChild(digitPlus);
+    //fim quarta linha
+    
+    //quinta linha
+    let quintaLinha = document.createElement("div");
+    quintaLinha.style.width = "280px";
+    quintaLinha.style.height = "50px";
+    quintaLinha.style.display = "flex";
+    quintaLinha.style.justifyContent = "space-around";
+    
+    let digit0 = document.createElement("button");
+    digit0.style.borderRadius = "10%";
+    digit0.style.border = "1px solid black";
+    digit0.style.textAlign = "center";
+    digit0.style.lineHeight = "30px";
+    digit0.style.height = "47.6px";
+    digit0.style.width = "100px";
+    digit0.style.fontSize = "20px";
+    digit0.style.padding = "8px";
+    digit0.style.backgroundColor = "black";
+    digit0.style.color = "white";
+    digit0.innerHTML = "0";
+    digit0.value = "0";
+    
+    let digitComma = document.createElement("button");
+    digitComma.style.borderRadius = "100%";
+    digitComma.style.border = "1px solid black";
+    digitComma.style.textAlign = "center";
+    digitComma.style.lineHeight = "30px";
+    digitComma.style.height = "47.6px";
+    digitComma.style.width = "47.6px";
+    digitComma.style.fontSize = "20px";
+    digitComma.style.padding = "8px";
+    digitComma.style.backgroundColor = "black";
+    digitComma.style.color = "white";
+    digitComma.innerHTML = ",";
+    digitComma.value = ",";
+    
+    let digitEqual = document.createElement("button");
+    digitEqual.style.borderRadius = "100%";
+    digitEqual.style.border = "1px solid black";
+    digitEqual.style.textAlign = "center";
+    digitEqual.style.lineHeight = "30px";
+    digitEqual.style.height = "47.6px";
+    digitEqual.style.width = "47.6px";
+    digitEqual.style.fontSize = "20px";
+    digitEqual.style.padding = "8px";
+    digitEqual.style.backgroundColor = "orange";
+    digitEqual.style.color = "white";
+    digitEqual.innerHTML = "=";
+    digitEqual.value = "=";
+    
+    quintaLinha.appendChild(digit0);
+    quintaLinha.appendChild(digitComma);
+    quintaLinha.appendChild(digitEqual);
+    //fim quarta linha
+
+    pBlocoDigitos.appendChild(primeiraLinha);
+    pBlocoDigitos.appendChild(segundaLinha);
+    pBlocoDigitos.appendChild(terceiraLinha);
+    pBlocoDigitos.appendChild(quartaLinha);
+    pBlocoDigitos.appendChild(quintaLinha);
+    
+    //bloco numeros e itens
+    
+    //fim bloco numeros e itens
+
+    //inserir no bloco preto (div01)
+    let divGrande = document.getElementById("div01")
+    divGrande.style.backgroundColor = "darkgrey";
+    divGrande.appendChild(pBlocoTexto);
+    divGrande.append(pBlocoDigitos);
+    //fim inserir no bloco preto (div01)
+
+    digit0.addEventListener("click", clicado);
+    digit1.addEventListener("click", clicado);
+    digit2.addEventListener("click", clicado);
+    digit3.addEventListener("click", clicado);
+    digit4.addEventListener("click", clicado);
+    digit5.addEventListener("click", clicado);
+    digit6.addEventListener("click", clicado);
+    digit7.addEventListener("click", clicado);
+    digit8.addEventListener("click", clicado);
+    digit9.addEventListener("click", clicado);
+    digitAC.addEventListener("click", clicado);
+    digitPosNeg.addEventListener("click", clicado);
+    digitPercent.addEventListener("click", clicado);
+    digitTimes.addEventListener("click", clicado);
+    digitMinus.addEventListener("click", clicado);
+    digitPlus.addEventListener("click", clicado);
+    digitComma.addEventListener("click", clicado);
+    digitEqual.addEventListener("click", clicado);
+    digitDivid.addEventListener("click", clicado);
+    
+    const actions = {
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "AC": clear,
+        "*": times, // Defina a ação apropriada aqui
+        "+": sum, // Defina a ação apropriada aqui
+        "-": minus, // Defina a ação apropriada aqui
+        ",": ".", // Defina a ação apropriada aqui
+        "+/-": posNeg, // Defina a ação apropriada aqui
+        "%": percent, // Defina a ação apropriada aqui
+        "=": equals, // Defina a ação apropriada aqui
+        "/": divided, // Defina a ação apropriada aqui
+    };
+
+    var primeiroNumero;
+    var segundoNumero;
+    var operacao;
+
+    // Função para quando o botão "AC" for clicado
+    function clear() {
+        pBlocoTexto.innerHTML = "0";
+        primeiroNumero = "";
+        segundoNumero = "";
+        operacao = "";
+    }
+
+    function times() {
+        primeiroNumero = pBlocoTexto.innerHTML;
+        operacao = "*";
+        if (!pBlocoTexto.innerHTML.includes("*")){
+            pBlocoTexto.innerText+="*";
+        }   
+    }
+
+    function divided() {
+        primeiroNumero = pBlocoTexto.innerHTML;
+        operacao = "/";
+        if (!pBlocoTexto.innerHTML.includes("/")){
+            pBlocoTexto.innerText+="/";
+        }   
+    }
+
+    function sum() {
+        operacao = "+";
+        primeiroNumero = pBlocoTexto.innerHTML;
+        if (!pBlocoTexto.innerHTML.includes("+")){
+            pBlocoTexto.innerText+="+";
+        }
+    }
+    function minus() {
+        operacao = "-";
+        primeiroNumero = pBlocoTexto.innerHTML;
+        if (!pBlocoTexto.innerHTML.includes("-")){
+            pBlocoTexto.innerText+="-";
+        }
+    }
+    function posNeg() {
+        operacao = "+/-";
+        primeiroNumero = pBlocoTexto.innerHTML;
+        if (parseFloat(primeiroNumero) > 0) {
+            primeiroNumero = "-"+primeiroNumero;
+        } else {
+            if (primeiroNumero.startsWith("-")) {
+                primeiroNumero = primeiroNumero.slice(1);
+            }
+            console.log(primeiroNumero);
+        }
+        pBlocoTexto.innerHTML = primeiroNumero;
+    }
+    function percent() {
+        operacao = "%";
+        primeiroNumero = pBlocoTexto.innerHTML;
+        if (!pBlocoTexto.innerHTML.includes("%")){
+            pBlocoTexto.innerText+="%";
+        }
+    }
+
+    function get_result(p, o, s) {
+        if (o == "+") {
+            return parseFloat(p) + parseFloat(s);
+        } else if (o == "-") {
+            return p - s;
+        } else if (o == "/") {
+            return p / s;
+        } else if (o == "%") {
+            return p * (s/100);
+        } else if (o == "*") {
+            return p * s;
+        } else {
+            return 0;
+        }
+    }
+    
+    function equals() {
+        for (let i = pBlocoTexto.innerHTML.indexOf(operacao)+1; i < pBlocoTexto.innerHTML.length; i++) {
+            if (segundoNumero == undefined) {
+                segundoNumero = pBlocoTexto.innerHTML[i];
+            } else {
+                segundoNumero += pBlocoTexto.innerHTML[i];
+            }
+        }
+        let result = get_result(primeiroNumero, operacao, segundoNumero);
+        pBlocoTexto.innerHTML = result.toPrecision(2);
+        primeiroNumero = result.toPrecision(2);
+        segundoNumero = "";
+        operacao = "";
+    }
+
+    function clicado(event) {
+        const valor = event.target.value;
+        const acao = actions[valor];
+
+        if (acao === undefined) {
+            console.log("Ação não definida para este botão.");
+        } else if (typeof acao === "function") {
+            acao();
+        } else {
+            if (pBlocoTexto.innerHTML == "0") {
+                pBlocoTexto.innerHTML = acao;
+            } else {
+                pBlocoTexto.innerHTML += acao;
+            }
+        }
+    }
+
+
+</script>
+<!-- Implemente uma página HTML contendo APENAS uma div na qual calculadora similar 
+ao da figura abaixo deve ser gerada por meio de JavaScript, ou seja, todos os 
+elementos da calculadora devem ser criados e formatados com JavaScript -->
+
+</body>
+</html>
