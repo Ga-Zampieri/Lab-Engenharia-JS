@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root">
+    </div>
+
+    <script type="text/babel">
+        
+        function MeuElemento({textoFinal}) {
+            return (
+                <>
+                    <h1>{textoFinal}</h1>
+                </>
+
+            )
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+
+        const excreverTexto = {
+            textoTotal: "Venha Estudar na Fatec.",
+            textoAtual: "",
+            i: 0
+        };
+
+        function exibirTexto() {
+            if (excreverTexto.i <= excreverTexto.textoTotal.length) {
+                excreverTexto.textoAtual = excreverTexto.textoTotal.slice(0, excreverTexto.i);
+                root.render(<MeuElemento textoFinal={excreverTexto.textoAtual} />);
+                excreverTexto.i++;
+                //console.log(excreverTexto.textoAtual);
+                setTimeout(exibirTexto, 300); // Tempo entre cada caractere (ajuste conforme necessário)
+            } 
+        }
+        exibirTexto();
+    </script>
+</body>
+</html>
