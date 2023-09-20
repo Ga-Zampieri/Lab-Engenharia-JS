@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding React to my page</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>Título que eu quis ponhar.</h1>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        //          Direto
+        // const elemento = 
+        //     (
+        //     <div>
+        //         <h1>Olá Mundo</h1>
+        //         <h2>Olá Fatec</h2>
+        //     </div>
+        //     );
+        // ReactDOM.render(elemento, document.getElementById('root'));
+        
+        //          Function OLD
+        // function Elemento() {
+        //     return  (             
+        //         <>
+        //             <h1>Olá Mundo</h1>
+        //             <h2>Olá Fatec</h2>
+        //         </>
+        //         );
+        // }
+        // ReactDOM.render(<Elemento/>, document.getElementById('root'));
+        
+        //          Function Atual
+        // function MeuElemento() {
+        //     const bom = "bonzinho?";
+        //     return (
+        //         <>
+        //             <h1>Oie Mundinho</h1>
+        //             <h2>Turu {bom}</h2>
+        //         </>
+        //     );
+        // }
+        // const container = document.getElementById('root');
+        // const root = ReactDOM.createRoot(container).render(<MeuElemento/>);
+
+        const faculdade = {
+            nome: "Fatec",
+            cidade: "Presidente Prudente"
+        };
+
+        function formatName(faculdade) {
+            return faculdade.nome + " - " + faculdade.cidade;
+        }
+
+        function MeuElemento() {
+            return <h1>Olá {formatName(faculdade)}</h1>;
+        }
+
+        const container2 = document.getElementById('root');
+        const root2 = ReactDOM.createRoot(container2).render(<MeuElemento/>);
+    </script>
+</body>
+</html>
